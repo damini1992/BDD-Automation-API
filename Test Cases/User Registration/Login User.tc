@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Login User</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>203018f9-44c9-4ffa-aaee-4cf9aae5c072</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>a78b8275-2532-4116-ba72-c86219d20d24</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>49c82934-884e-475c-8cff-a983682cc666</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>a78b8275-2532-4116-ba72-c86219d20d24</id>
+      <masked>false</masked>
+      <name>mv_email</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>49c82934-884e-475c-8cff-a983682cc666</id>
+      <masked>false</masked>
+      <name>mv_password</name>
+   </variable>
+</TestCaseEntity>

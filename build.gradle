@@ -1,0 +1,34 @@
+plugins {
+  id 'java'
+  id ("com.katalon.gradle-plugin") version "0.1.2"
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+    
+
+    implementation 'io.cucumber:cucumber-java:4.2.0'
+    implementation 'io.cucumber:cucumber-testng:4.2.0'
+    implementation 'org.testng:testng:7.7.0' 
+}
+
+
+test {
+    useTestNG()
+
+    // ✅ Control parallel forks (JVM level)
+    maxParallelForks = Runtime.runtime.availableProcessors()
+
+    // ✅ Pass tags dynamically
+    systemProperty "cucumber.filter.tags",
+        System.getProperty("cucumber.filter.tags")
+}
+
+
+task copyDependencies(type: Copy) {
+    from configurations.runtimeClasspath
+    into "$projectDir/Drivers"
+}

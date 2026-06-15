@@ -1,0 +1,19 @@
+{
+    "rv_name": "User 02",
+    "rv_email": "damini@gmail.com",
+    "rv_password": "Damini@1992",
+    "rv_title": "Ms",
+    "rv_birth_date": "23",
+    "rv_birth_month": "7",
+    "rv_birth_year": "1995",
+    "rv_firstname": "Tester ",
+    "rv_lastname": "Expleo",
+    "rv_company": "tata",
+    "rv_address1": "test 2",
+    "rv_address2": "",
+    "rv_country": "India",
+    "rv_zipcode": "420086",
+    "rv_state": null,
+    "rv_city": "Panji",
+    "rv_mobile_number": "8888888888"
+}
