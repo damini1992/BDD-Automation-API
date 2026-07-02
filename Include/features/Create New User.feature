@@ -1,7 +1,7 @@
 Feature: User Creation
   I want to validate User Creation API
 
-  @positive
+  @api @positive
   Scenario: Validation of User Creation API for successful user creation
     Given I Prepare test data file for sending request
     When I send request to Create New User API
@@ -10,14 +10,14 @@ Feature: User Creation
     And I verify response time should be less than 3000 mili seconds
     And  I validate schema against response  
     
- @negative
+  @api @negative
   Scenario: Validation of User Creation API for duplicate user
    Given I Prepare test data file for sending request
     When I send request to Create New User API
     Then I verify the status code should be 400
     And I verify the message should be "Email already exists!"
     
- @validation
+ @api @validation
   Scenario: Validation of User Creation API when mandatory fields are empty
    Given I Prepare test data file for sending request
     When I send request to Create New User API

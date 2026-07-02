@@ -11,7 +11,8 @@ import io.cucumber.junit.CucumberOptions;
 	glue = "stepdefination",
 	plugin = [
 		"pretty",
-		"json:ReportsFolder/json-report/cucumber.json"
+		"json:ReportsFolder/json-report/cucumber.json",
+		"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
 	]
 )
 public class RunCucumberTest {

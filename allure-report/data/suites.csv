@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"  I want to validate User Creation API","6437","Validation of User Creation API for successful user creation","","2026-07-02","broken","2026-07-02","","User Creation","Validation of User Creation API for successful user creation",""
+"  I want to validate User Creation API","6203","Validation of User Creation API when mandatory fields are empty","","2026-07-02","broken","2026-07-02","","User Creation","Validation of User Creation API when mandatory fields are empty",""
+"  I want to validate User Creation API","6391","Validation of User Creation API for duplicate user","","2026-07-02","broken","2026-07-02","","User Creation","Validation of User Creation API for duplicate user",""

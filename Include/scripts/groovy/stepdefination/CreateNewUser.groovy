@@ -10,13 +10,14 @@ import com.kms.katalon.core.testobject.ResponseObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
-import io.cucumber.java.en.Given
-import io.cucumber.java.en.Then
-import io.cucumber.java.en.When
 import groovy.json.JsonOutput
 import groovy.json.JsonSlurper
 import helper.ApiHelper
 import helper.ScenarioContext
+import io.cucumber.java.en.Given
+import io.cucumber.java.en.Then
+import io.cucumber.java.en.When
+import io.qameta.allure.Allure
 
 
 public class CreateNewUser {
@@ -32,8 +33,12 @@ public class CreateNewUser {
 		for (int rowIndex = 1; rowIndex <= rowCount; rowIndex++) {
 
 			String rowTag = excelData.getValue("ScenarioTag", rowIndex)
+			
+			println rowTag
 
 			String tags=ScenarioContext.getContext("ScenarioTag")
+			
+			println tags
 
 			if (tags.contains(rowTag)) {
 
@@ -84,10 +89,11 @@ public class CreateNewUser {
 
 		String responseBody = response.getResponseBodyContent()
 
-		Hooks.scenario.write("Response Body")
+		
+        Allure.step("Response Body")
 		def jsonObject = new JsonSlurper().parseText(responseBody)
 		def prettyJson = JsonOutput.prettyPrint(JsonOutput.toJson(jsonObject))
-		Hooks.scenario.write(prettyJson)
+		Allure.step(prettyJson)
 
 		ScenarioContext.setContext("Response", response)
 		ScenarioContext.setContext("mv_email", ScenarioContext.getContext("mv_email"))

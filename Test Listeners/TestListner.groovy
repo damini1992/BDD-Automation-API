@@ -2,15 +2,18 @@ import org.openqa.selenium.OutputType
 import org.openqa.selenium.TakesScreenshot
 import org.openqa.selenium.WebDriverException
 
+import com.kms.katalon.core.annotation.AfterTestCase
 import com.kms.katalon.core.annotation.AfterTestSuite
 import com.kms.katalon.core.annotation.BeforeTestCase
 import com.kms.katalon.core.annotation.BeforeTestSuite
+import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.context.TestCaseContext
 import com.kms.katalon.core.context.TestSuiteContext
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 
-import io.cucumber.java.Scenario
 import io.cucumber.java.AfterStep
+import io.cucumber.java.Scenario
+import io.qameta.allure.Allure
 import net.masterthought.cucumber.Configuration
 import net.masterthought.cucumber.ReportBuilder
 import net.masterthought.cucumber.json.support.Status
@@ -24,21 +27,10 @@ class TestListner {
 	@BeforeTestCase
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
 		CucumberKW.GLUE = ['stepdefination']
+	
 		
 	}
-	
-	@AfterStep
-	public void embedScreenshot(Scenario scenario) {
-		if (scenario.isFailed()) {
-			try {
-				byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-				scenario.embed(screenshot, "image/png");
-			} catch (WebDriverException somePlatformsDontSupportScreenshots) {
-				System.err.println(somePlatformsDontSupportScreenshots.getMessage());
-			}
-		}
-	}
-		/**
+			/**
 	 * Executes after every test case ends.
 	 * @param testCaseContext related information of the executed test case.
 	 */
@@ -104,5 +96,14 @@ class TestListner {
 		builder.generateReports()
 
 		println("🎉 Consolidated history report generated at: " + reportOutputDir)
+		
+		
+		String projectPath = RunConfiguration.getProjectDir()	   
 	}
+	
+	
+	@AfterTestCase
+	   def afterTestCase(TestCaseContext context) {
+	   }
+   
 }

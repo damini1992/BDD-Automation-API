@@ -1,0 +1,4 @@
+"BROKEN","EPIC","FAILED","FEATURE","PASSED","SKIPPED","STORY","UNKNOWN"
+"1","","0","User Creation","0","0","Validation of User Creation API for successful user creation","0"
+"1","","0","User Creation","0","0","Validation of User Creation API when mandatory fields are empty","0"
+"1","","0","User Creation","0","0","Validation of User Creation API for duplicate user","0"
